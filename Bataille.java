@@ -9,7 +9,6 @@ public class Bataille
     {
         Scanner scanner = new Scanner(System.in);
         
-        // 1. Création du paquet de 52 cartes
         List<Integer> paquet = new ArrayList<>();
         for (int i = 0; i < 4; i++)
         {
@@ -19,11 +18,9 @@ public class Bataille
             }
         }
 
-        // 2. Utilisation de ta méthode personnalisée pour mélanger
         System.out.println("Mélange du paquet en cours...");
         melangerLePaquet(paquet);
 
-        // 3. Distribution
         List<Integer> mainJoueur = new ArrayList<>(paquet.subList(0, 26));
         List<Integer> mainRobot = new ArrayList<>(paquet.subList(26, 52));
 
@@ -70,18 +67,14 @@ public class Bataille
         scanner.close();
     }
 
-    /**
-     * Méthode de mélange personnalisée (Fisher-Yates)
-     */
     private static void melangerLePaquet(List<Integer> listeAChoisir)
     {
         Random random = new Random();
         for (int i = listeAChoisir.size() - 1; i > 0; i--)
         {
-            // Choix d'un index aléatoire entre 0 et i inclus
+
             int j = random.nextInt(i + 1);
             
-            // Échange des éléments (Swap)
             int temp = listeAChoisir.get(i);
             listeAChoisir.set(i, listeAChoisir.get(j));
             listeAChoisir.set(j, temp);
