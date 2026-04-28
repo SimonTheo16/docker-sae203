@@ -31,6 +31,6 @@ La sortie de docker ps doit être similaire à :
 CONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS          PORTS                           NAMES
 9f4ae517387b   docker-sae203       "docker-php-entrypoi…"   30 seconds ago   Up 29 seconds   90/tcp, 0.0.0.0:8888->80/tcp    boring_kalam
 
-Finalement, arrêtez le conteneur avec la commande suivante (les dernières chiffres sont le code de hachage affiché par docker ps):
+Finalement, arrêtez le conteneur avec la commande suivante (les derniers chiffres sont le code de hachage affiché par docker ps):
 
 docker stop 9f4ae517387b
