@@ -18,9 +18,9 @@ Construisez l'image décrite dans dockerfile avec docker build :
 
 Lancer le serveur web :
 
-	docker run -d -p 8080:80 <nom-de-l'image-choisie>
+	docker run -d -p 8888:80 <nom-de-l'image-choisie>
 
-Vérifier que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez localhost:8080
+Vérifier que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez http://di-docker:8888
 
 Vérifier que le conteneur associé est actif :
 
@@ -28,15 +28,9 @@ Vérifier que le conteneur associé est actif :
 
 La sortie de docker ps doit être similaire à :
 
-CONTAINER ID   IMAGE          COMMAND              CREATED          STATUS          PORTS                                   NAMES
-b8f8f406b03c   httpd-juanlu   "httpd-foreground"   30 minutes ago   Up 30 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   quirky_tesla
+CONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS          PORTS                           NAMES
+9f4ae517387b   docker-sae203       "docker-php-entrypoi…"   30 seconds ago   Up 29 seconds   90/tcp, 0.0.0.0:8888->80/tcp    boring_kalam
 
-    Finalement, arrêtez le conteneur avec la commande suivante (les dernières chiffres sont le code de hachage affiché par docker ps):
+Finalement, arrêtez le conteneur avec la commande suivante (les dernières chiffres sont le code de hachage affiché par docker ps):
 
-docker stop b8f8f406b03c
-
-    Encore, si on souhaite supprimer le conteneur, on peut taper :
-
-docker rm b8f8f406b03c
-
-NOTE : Au lieu du code de hachage, on peut toujours taper le nom du conteneur. Dans le cas d'exemple ce nom est quirky_tesla
+docker stop 9f4ae517387b
